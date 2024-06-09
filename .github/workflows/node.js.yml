@@ -17,4 +17,11 @@ jobs:
       - name: npm install, build and test
         run: |
           npm install
+      - name: Build and push the docker image
+        uses: mr-smithers-excellent/docker-build-push@v4
+        with:
+          image: maheshryali/nodejsnew
+          registry: docker.io
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}        
 
