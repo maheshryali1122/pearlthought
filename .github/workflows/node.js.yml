@@ -37,7 +37,7 @@ jobs:
           docker image build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
       - name:  Setting up terraform
-        uses: hashicorp/setup-terrafrom@v1
+        uses: hashicorp/terraform-github-actions/init@v0.4.0
       - name: Initialization
         run: terraform init
         working-directory: ./Terraform
