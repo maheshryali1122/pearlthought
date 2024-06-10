@@ -25,7 +25,7 @@ resource "aws_route_table" "routetables" {
         gateway_id = aws_internet_gateway.ecsigw.id
     }
     tags = {
-        Name = public_route_table
+        Name = "public_route_table"
     }
 }
 resource "aws_route_table_association" "association" {

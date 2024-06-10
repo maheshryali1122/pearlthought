@@ -2,8 +2,8 @@ resource "aws_ecs_task_definition" "taskforecs" {
     family = "nodejstaskdefinition"
     requires_compatibilities = ["FARGATE"]
     network_mode = "awsvpc"
-    cpu = "256"
-    ram = "512"
+    cpu = 256
+    memory = 512
     container_definitions = jsonencode([{
         name = "nodejsapplication"
         image = "891376986113.dkr.ecr.us-west-2.amazonaws.com/nodejsrepo:26f7ac5701c738a3e5d54cd274dca122f5f142e9"
