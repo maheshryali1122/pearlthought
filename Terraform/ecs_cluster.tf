@@ -3,4 +3,8 @@ resource "aws_ecs_cluster" "ecs_nodejs" {
     tags = {
         Name = "Ecsnodejs"
     }
+
+    depends_on = [
+        aws_iam_role.taskexecutionroleecs
+    ]
 }

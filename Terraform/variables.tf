@@ -4,3 +4,6 @@ variable "vpccidr" {
 variable "subnettagnames" {
     type = list(string)
 }
+variable "availabilityzone" {
+    type = list(string)
+}

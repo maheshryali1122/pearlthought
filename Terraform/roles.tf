@@ -11,7 +11,16 @@ resource "aws_iam_role" "taskexecutionroleecs" {
         }]
     })
     managed_policy_arns = [
-        "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy" #This policy has permissions with ecr cloudwatch etc
+        "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy",
+        "arn:aws:iam::aws:policy/CloudFrontFullAccess", 
+        "arn:aws:iam::aws:policy/AmazonS3FullAccess", 
+        "arn:aws:iam::aws:policy/AmazonElasticContainerRegistryPublicFullAccess", 
+        "arn:aws:iam::aws:policy/CloudWatchFullAccess", 
+        "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
+        
     ]
+    depends_on = [ 
+        aws_route_table_association.association
+     ]
   
 }
