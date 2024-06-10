@@ -4,7 +4,7 @@ on:
     branches:
       - main
 jobs:
-  Build and deploy:
+  Build_and_deploy:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v4
