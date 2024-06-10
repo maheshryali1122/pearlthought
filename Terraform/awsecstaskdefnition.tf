@@ -6,7 +6,7 @@ resource "aws_ecs_task_definition" "taskforecs" {
     memory                   = 512
     container_definitions = jsonencode([{
         name  = "nodejsapplication"
-        image = "891376986113.dkr.ecr.us-west-2.amazonaws.com/nodejsrepo:26f7ac5701c738a3e5d54cd274dca122f5f142e9"
+        image = "891376986113.dkr.ecr.us-west-2.amazonaws.com/nodejsrepo:${var.imagetag}"
         essential = true
         portMappings = [{
             protocol     = "tcp"
