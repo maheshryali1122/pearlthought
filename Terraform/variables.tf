@@ -7,3 +7,6 @@ variable "subnettagnames" {
 variable "availabilityzone" {
     type = list(string)
 }
+variable "imagetag" {
+    type = string
+}
