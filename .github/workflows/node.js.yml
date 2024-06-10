@@ -36,3 +36,15 @@ jobs:
         run: |
           docker image build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
+      - name:  Setting up terraform
+        uses: hashicorp/setup-terrafrom@v1
+      - name: Initialization
+        run: terraform init
+        working-directory: ./Terraform
+      - name: Apply the infrastructure
+        run: terraform apply -var-file "dev.tfvars" -auto-approve
+        working-directory: ./Terraform
+  
+
+
+
