@@ -23,7 +23,7 @@ resource "aws_security_group" "sg_for_ecs" {
     ingress {
         from_port = 3000
         to_port = 3000
-        protocol = "-1"
+        protocol = "tcp"
         security_groups = ["aws_security_group.sg_for_alb.id"]
     }  
     egress {
