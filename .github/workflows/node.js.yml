@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: 12.x
           cache: 'npm'
-      - name: Install the package
+      - name: Install the packages
         run: |
           npm install
       - name: Configure AWS credentials
